@@ -11,6 +11,7 @@ export default function Main({ data }) {
     <main className="my-5 mx-auto grid max-w-7xl justify-between p-4 sm:grid-cols-2">
       <div className="relative h-[400px] w-full sm:h-[750px] sm:w-[500px] mb-6">
         <Image
+          alt="Poster Artwork"
           objectFit="cover"
           objectPosition="left top"
           layout="fill"
@@ -32,15 +33,17 @@ export default function Main({ data }) {
           </p>
           <div className="">
             <a
+              rel="noreferrer"
               target="_blank"
               href={`https://www.imdb.com/title/${data.imdb_id}`}
             >
-              <Image src="/IMDB.svg" width="57" height="29" />
+              <Image alt="IMDB Logo" src="/IMDB.svg" width="57" height="29" />
             </a>
           </div>
         </div>
         <div className="my-4 hidden sm:block relative h-[281px] w-[500px] sm:h-mb-6">
           <Image
+            alt="Backdrop Artwork"
             objectFit="cover"
             objectPosition="left top"
             layout="fill"

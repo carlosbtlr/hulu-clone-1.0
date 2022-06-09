@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 const base = 'https://image.tmdb.org/t/p/w500/'
 
 export default function Main({ data }) {
+  console.log(base + data.backdrop_path)
   const router = useRouter()
   return (
     <main className="my-5 mx-auto grid max-w-7xl justify-between p-4 sm:grid-cols-2">
@@ -29,6 +30,22 @@ export default function Main({ data }) {
           <p className="text-xs sm:text-base font-semibold text-gray-400">
             {data.vote_average}
           </p>
+          <div className="">
+            <a
+              target="_blank"
+              href={`https://www.imdb.com/title/${data.imdb_id}`}
+            >
+              <Image src="/IMDB.svg" width="57" height="29" />
+            </a>
+          </div>
+        </div>
+        <div className="my-4 hidden sm:block relative h-[281px] w-[500px] sm:h-mb-6">
+          <Image
+            objectFit="cover"
+            objectPosition="left top"
+            layout="fill"
+            src={base + data.backdrop_path.toString()}
+          />
         </div>
         <p className="my-4 text-sm sm:text-base text-gray-400">
           {data.overview}
